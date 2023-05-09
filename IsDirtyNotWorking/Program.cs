@@ -14,7 +14,9 @@ using (var gitCommandProcess = new Process())
     gitCommandProcess.Start();
     gitCommandProcess.WaitForExit();
 
+    Console.WriteLine($"ThisAssembly.Git.IsDirtyString={ThisAssembly.Git.IsDirtyString}");
     Console.WriteLine($"ThisAssembly.Git.IsDirty={ThisAssembly.Git.IsDirty}");
+    Console.WriteLine();
     Console.WriteLine($"git diff --quiet HEAD={gitCommandProcess.ExitCode == 1}");
 }
 
